@@ -1,6 +1,7 @@
 let lines = ["Hello", "World", "in", "a", "frame"]
 
-function countLetters(arr) {
+// Return the number of letters of the longest word
+function countMaxLetters(arr) {
 	let maxCount = 0
 	for (word of arr) {
 		if (word.length > maxCount) {
@@ -10,8 +11,10 @@ function countLetters(arr) {
 	return maxCount
 }
 
+// Output the frame to the console
 function makeFrame(arr) {
-	borderWidth = countLetters(arr) + 4;
+	let borderWidth = countMaxLetters(arr) + 4;
+	
 	// Make top border
 	topBorder = ''
 	for (let i = borderWidth; i > 0; i--) {
@@ -21,8 +24,8 @@ function makeFrame(arr) {
 
 	// Make middle borders
 	for (word of arr) {
-		middleBorder = '* ' + word
-		// Add a space if the length of the border is less than the borderWidth
+		let middleBorder = '* ' + word
+		// Add spaces if the length of the border is less than the borderWidth
 		for (; middleBorder.length < borderWidth - 2;) {
 			middleBorder += ' '
 		}
@@ -31,7 +34,7 @@ function makeFrame(arr) {
 	}
 
 	// Make bottom border
-	bottomBorder = ''
+	let bottomBorder = ''
 	for (let i = borderWidth; i > 0; i--) {
 		bottomBorder += '*'
 	}
